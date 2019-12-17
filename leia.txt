@@ -5,3 +5,7 @@
 / dotnet new sln --name StoredBuild
 
 / dotnet sln add src\StoredBuild.Domain\StoredBuild.Domain.csproj
+
+
+gulp taskCSS
+gulp taskJS
