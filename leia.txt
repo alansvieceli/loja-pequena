@@ -1,0 +1,5 @@
+/src dotnet new classlib --name StoredBuild.Domain
+
+/ dotnet new sln --name StoredBuild
+
+/ dotnet sln add src\StoredBuild.Domain\StoredBuild.Domain.csproj
