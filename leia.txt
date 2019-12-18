@@ -1,11 +1,13 @@
 /src dotnet new classlib --name StoredBuild.Domain
 
 /src dotnet new mvc --name StoredBuild.Web
+   -- dotnet add StoredBuild.Web.csproj reference ..\StoredBuild.Domain\StoredBuild.DI.csproj
 
 /src dotnet new classlib --name StoredBuild.Data
    -- dotnet add StoredBuild.Data.csproj reference ..\StoredBuild.Domain\StoredBuild.Domain.csproj
 
 /src dotnet new classlib --name StoredBuild.DI   //Dependency Injector
+   -- dotnet add StoredBuild.DI.csproj reference ..\StoredBuild.Domain\StoredBuild.Data.csproj
 
 /src dotnet new
 
@@ -19,3 +21,9 @@
 
 gulp taskCSS
 gulp taskJS
+
+------------------------------
+
+dotnet ef --startup-project ..\StoredBuild.Web\StoredBuild.Web.csproj --project .\StoredBuild.Data.csproj migrations add AddCategory
+
+dotnet ef --startup-project ..\StoredBuild.Web\StoredBuild.Web.csproj --project .\StoredBuild.Data.csproj database update
