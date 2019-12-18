@@ -2,9 +2,12 @@
 
 /src dotnet new mvc --name StoredBuild.Web
 
+/src dotnet new
+
 / dotnet new sln --name StoredBuild
 
 / dotnet sln add src\StoredBuild.Domain\StoredBuild.Domain.csproj
+/ dotnet sln add src\StoredBuild.Web\StoredBuild.Web.csproj
 
 
 gulp taskCSS
