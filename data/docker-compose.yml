@@ -15,7 +15,7 @@ services:
       - var.env
     volumes:
       # Volume dos dados 
-      - ./data:/var/lib/mysql
+      - ./dados:/var/lib/mysql
     networks:
       - rede_db
   admin:

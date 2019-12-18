@@ -6,6 +6,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\StoredBuild.DI\StoredBuild.DI.csproj" />
   </ItemGroup>
 
 </Project>

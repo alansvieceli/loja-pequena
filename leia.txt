@@ -5,6 +5,8 @@
 /src dotnet new classlib --name StoredBuild.Data
    -- dotnet add StoredBuild.Data.csproj reference ..\StoredBuild.Domain\StoredBuild.Domain.csproj
 
+/src dotnet new classlib --name StoredBuild.DI   //Dependency Injector
+
 /src dotnet new
 
 / dotnet new sln --name StoredBuild
@@ -12,6 +14,7 @@
 / dotnet sln add src\StoredBuild.Domain\StoredBuild.Domain.csproj
 / dotnet sln add src\StoredBuild.Web\StoredBuild.Web.csproj
 / dotnet sln add src\StoredBuild.Data\StoredBuild.Data.csproj
+/ dotnet sln add src\StoredBuild.CI\StoredBuild.DI.csproj
 
 
 gulp taskCSS
