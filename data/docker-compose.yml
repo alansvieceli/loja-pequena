@@ -1,0 +1,35 @@
+version: '3'
+
+networks: 
+  rede_db:
+  redea_admin:
+
+services:
+  db:
+    container_name: mysql-db-01
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+      - 33060:33060
+    env_file:
+      - var.env
+    volumes:
+      # Volume dos dados 
+      - ./data:/var/lib/mysql
+    networks:
+      - rede_db
+  admin:
+    container_name: mysql-admin-01
+    image: nazarpc/phpmyadmin
+    depends_on:
+      - db
+    links:
+      - db:mysql
+    ports:
+      - 8082:80
+    networks: 
+      - rede_db
+      - redea_admin
+
+  #docker container run -d -p 3306:3306 --name alan-mysql -e MYSQL_ROOT_PASSWORD="456852" -e MYSQL_DATABASE="banco_teste01" mysql:5.7
+  #docker container run -d -p 8082:80 --name alan-myadmin --link alan-mysql:mysql  nazarpc/phpmyadmin

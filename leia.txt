@@ -2,12 +2,16 @@
 
 /src dotnet new mvc --name StoredBuild.Web
 
+/src dotnet new classlib --name StoredBuild.Data
+   -- dotnet add StoredBuild.Data.csproj reference ..\StoredBuild.Domain\StoredBuild.Domain.csproj
+
 /src dotnet new
 
 / dotnet new sln --name StoredBuild
 
 / dotnet sln add src\StoredBuild.Domain\StoredBuild.Domain.csproj
 / dotnet sln add src\StoredBuild.Web\StoredBuild.Web.csproj
+/ dotnet sln add src\StoredBuild.Data\StoredBuild.Data.csproj
 
 
 gulp taskCSS
