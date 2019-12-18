@@ -2,7 +2,7 @@ using StoredBuild.Domain.Exceptions;
 
 namespace StoredBuild.Domain.Models
 {
-  public class Category
+  public class Category : Entity
   {
 
     public int Id { get; private set; }
