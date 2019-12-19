@@ -27,3 +27,5 @@ gulp taskJS
 dotnet ef --startup-project ..\StoredBuild.Web\StoredBuild.Web.csproj --project .\StoredBuild.Data.csproj migrations add AddCategory
 
 dotnet ef --startup-project ..\StoredBuild.Web\StoredBuild.Web.csproj --project .\StoredBuild.Data.csproj database update
+
+------------------------
